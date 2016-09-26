@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
         width: Dimensions.get('window').width
     },
     buttons: {
-        height: 15,
-        marginTop: -15,
+        height: 25,
+        marginTop: -25,
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
