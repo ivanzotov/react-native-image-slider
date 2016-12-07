@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
     buttons: {
         height: 25,
         marginTop: -25,
-        flex: 1,
+        flexGrow: 1,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row'
