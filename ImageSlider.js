@@ -66,6 +66,7 @@ export default class ImageSlider extends Component {
         }
         this.setState({position: index, timeout: setTimeout(() => {
             this.setState({scrolling: false, timeout: null});
+            this.props.scrolling(false)
             if (this.props.onPositionChanged) {
                 this.props.onPositionChanged(index);
             }
@@ -82,6 +83,7 @@ export default class ImageSlider extends Component {
     componentWillReceiveProps(props) {
         if (props.position !== undefined) {
             this.setState({scrolling: true});
+            this.props.scrolling(true)
             this._move(props.position);
         }
     }
@@ -132,6 +134,7 @@ export default class ImageSlider extends Component {
                 this.state.left.setValue(left);
                 if (!this.state.scrolling) {
                     this.setState({scrolling: true});
+                    this.props.scrolling(true)
                 }
             },
             onShouldBlockNativeResponder: () => true
@@ -181,6 +184,7 @@ export default class ImageSlider extends Component {
                         underlayColor="#ccc"
                         onPress={() => {
                             this.setState({scrolling: true});
+                            this.props.scrolling(true)
                             return this._move(index);
                         }}
                         style={[styles.button, position === index && styles.buttonSelected]}>
